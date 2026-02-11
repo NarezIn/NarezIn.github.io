@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<title>NarezIn</title>
+<link rel="icon" type="image/png" href="img/anime_head_plain.png">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+</head>
+
+<link href="https://fonts.googleapis.com/css?family=Lora:400,700|Montserrat:300" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display|Source+Sans+Pro" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Cantata+One" rel="stylesheet">
+
+
+<link rel="stylesheet" type="text/css" href="site.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<body>
+
+    <div class="bgimg">
+        <div class="full black" style="position: absolute; top:80%; height:35%;">
+        </div>
+        <div class="full" id="hd">
+            Zeran Ni (Simon)
+        </div>
+
+        <div class="full" style="position: absolute; top:100%; height:40%;">
+            <div class="content">
+                <div class="link"><a href="mailto: zn2133@nyu.edu" target="_blank">contact</a></div>
+                <div class="link"><a href="pdf/Y3S1_resume.pdf" target="_blank">Resume</a></div>
+                <div class="link"><a href="pdf/Y3S1_resume.pdf" target="_blank">Potpourri</a></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="full">
+        <div class="chunk">
+            <img src="img/anime_head_plain.png" class="aboutme-icon" alt="Profile Icon">
+            <div class="minihd">
+                About Me
+            </div>
+            <div>
+                <p>
+                    My name is
+                    <ruby>
+                        倪泽然
+                        <rt>
+                            ní zé rán
+                        </rt>
+
+                    </ruby>. I'm an undergraduate student studying Computer Science and Data Science at the <a
+                        href="https://cds.nyu.edu/" target="_blank">Center for Data Science</a> at New York University,
+                    also working as a research intern at <a href="https://wp.nyu.edu/riskeconlab/">RiskEcon Lab</a> at
+                    <a href="https://cims.nyu.edu/" target="_blank">Courant Institute of Mathematical Sciences</a> at
+                    NYU.
+                </p>
+                <p>
+                    I'm also exploring full stack development #through my personal project? (I don't have anything
+                    fancy). Aside from all that, I enjoy rock climbing, contributing to my great wall project (hyperlink
+                    this), cooking, watching (and sucking at playing) soccer.
+                </p>
+                (Actually hyperlink everything I can so above).
+            </div>
+        </div>
+    </div>
+
+    <div class="midimg" style="background-image:url('img/hold_bro.jpg')">
+    </div>
+
+    <div class="chunk">
+        <div class="minihd">
+            Projects
+        </div>
+
+        <div class="project">
+            <div class="projimg" style="width: 210px;">
+                <img src="img/autograder_logo.png" alt="autograder-logo" class="autograder-logo">
+            </div>
+            <div class="projtext">
+                <div class="projhd">
+                    AI-Powered Autograder for <i>Introduction to Computer Programming</i>
+                </div>
+                <div class="projsub">
+                </div>
+                <div class="projdate">
+                </div>
+                <div class="projdesc">
+                    Developed an AI-powered autograder using LangChain and OpenAI GPT models to evaluate 11 programming
+                    assignments for over 180 students. The system engineered a dynamic testing pipeline using
+                    <code>subprocess</code> and <code>re</code> to assess code quality and formatting, successfully
+                    overcoming Gradescope’s function-call dependencies to evaluate early-semester assignments.
+                    <a href="https://github.com/NarezIn/Autograder_Intro_to_CP" target="_blank">[Github Repo]</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!---
+<div class="midimg" style="background-image:url('large/panda.jpg')">
+</div>
+
+<div class="chunk">
+    <div class="minihd">
+        Software Engineering
+    </div>
+    <div class="project">
+        <div class="projimg">
+        <img src="projimg/fb.png" alt="Facebook">
+        </div>
+        <div class="projtext">
+            <div class="projhd">
+                Facebook
+            </div>
+            <div class="projsub">
+                Menlo Park, CA
+            </div>
+            <div class="projdate">
+                Aug 2019–Present
+            </div>
+            <div class="projdesc">
+                I am one of the main developers of Bean Machine, our probabilistic programming language, and I have implemented many of its core MCMC inference algorithms such as the No U-Turn Sampler. I also work to develop our own MCMC method named Newtonian Monte Carlo, which estimates a Gaussian distribution to match the curvature around the current sample.
+            </div>
+        </div>
+    </div>
+    <div class="project">
+        <div class="projimg">
+        <img src="projimg/insta.png" alt="Instagram">
+        </div>
+        <div class="projtext">
+            <div class="projhd">
+                Instagram
+            </div>
+            <div class="projsub">
+                New York, NY
+            </div>
+            <div class="projdate">
+                Summer 2018
+            </div>
+            <div class="projdesc">
+                I worked on the Explore product team to add the full functionality of tagging users in videos. This included the designing and implementation of the tagging workflow as well as the modifification server-side configurations. I also worked on the release and user testing, requiring the managing of privacy issues.
+            </div>
+        </div>
+    </div>
+    <div class="project">
+        <div class="projimg">
+        <img src="projimg/fb.png" alt="Facebook">
+        </div>
+        <div class="projtext">
+            <div class="projhd">
+                Facebook
+            </div>
+            <div class="projsub">
+                Menlo Park, CA
+            </div>
+            <div class="projdate">
+                Summer 2017
+            </div>
+            <div class="projdesc">
+                I worked on the Mobile Interface Health team to classify every HTTP request from the Android app and detail the volume of different categories of network traffic. I also streamlined the data logging process by reducing 3000+ lines of server-side boilerplate code by through the automatic population of table columns.
+            </div>
+        </div>
+    </div>
+    <div class="project">
+        <div class="projimg">
+        <img src="projimg/onbase.png" alt="Hyland">
+        </div>
+        <div class="projtext">
+            <div class="projhd">
+                Hyland
+            </div>
+            <div class="projsub">
+                Cleveland, OH
+            </div>
+            <div class="projdate">
+                Summer 2016
+            </div>
+            <div class="projdesc">
+                I was part of the placeholder team on the Onbase content management system, where I optimized the Microsoft word plugin for placeholders. I worked on a complete redesign of placeholder creation, which included the ability for bulk creation.
+            </div>
+        </div>
+    </div>
+</div>
+--->
+
+</body>
+
+</html>
