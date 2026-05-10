@@ -1,3 +1,16 @@
+document.getElementById('contact-btn').addEventListener('click', function () {
+    var label = document.querySelector('#contact-btn .contact-label');
+    var tooltip = document.querySelector('#contact-btn .contact-tooltip');
+    navigator.clipboard.writeText('zn2133@nyu.edu').then(function () {
+        label.textContent = 'copied!';
+        tooltip.textContent = 'zn2133@nyu.edu copied to clipboard!';
+        setTimeout(function () {
+            label.textContent = 'contact';
+            tooltip.textContent = 'click to copy my email';
+        }, 2000);
+    });
+});
+
 $( document ).ready(function() {
  if ($(window).width() < 863) {
      var tests = document.getElementsByClassName('projimg');

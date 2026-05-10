@@ -23,7 +23,10 @@
 
         <div class="full" style="position: absolute; top:100%; height:40%;">
             <div class="content">
-                <div class="link"><a href="mailto: zn2133@nyu.edu" target="_blank">contact</a></div>
+                <div class="link contact-copy" id="contact-btn">
+                    <span class="contact-label">contact</span>
+                    <span class="contact-tooltip">click to copy my email</span>
+                </div>
                 <div class="link"><a href="pdf/Resume_ZN_Y3S2.pdf" target="_blank">Resume</a></div>
                 <div class="link"><a href="" target="_blank">Potpourri</a></div>
             </div>
@@ -66,6 +69,15 @@
 
     <div class="chunk">
         <div class="minihd">
+            Experience
+        </div>
+        <div style="text-align: center; color: #aaa; font-style: italic; margin-top: 20px;">
+            wait for it...
+        </div>
+    </div>
+
+    <div class="chunk">
+        <div class="minihd">
             Projects
         </div>
 
@@ -90,7 +102,122 @@
                 </div>
             </div>
         </div>
+
+        <div class="project">
+            <div class="projimg" style="width: 210px;">
+                <div class="logo-link">
+                    <img src="img/book_exchange_logo_raw.png" alt="book-exchange-logo" class="logo-img">
+                    <img src="img/book_exchange_logo_hover.png" alt="book-exchange-logo-hover" class="logo-img hover-v">
+                </div>
+            </div>
+            <div class="projtext">
+                <div class="projhd">Book Exchange</div>
+                <div class="projsub">Student Book Marketplace</div>
+                <div class="projdate"></div>
+                <div class="projdesc">
+                    A full-stack web marketplace for students to buy, loan, or donate second-hand textbooks.
+                    Built with Flask, MongoDB, and Flask-Login, the platform supports user authentication,
+                    post creation and editing, and browsable community listings. Images are hosted via
+                    Cloudinary and the app is deployed on Vercel. Implemented lazy account deletion —
+                    when a user deletes their account, references in other users' records are only cleaned
+                    up when those records are next accessed, avoiding expensive cascading deletes at
+                    deletion time.
+                    <a href="https://github.com/NarezIn/Book-Exchange" target="_blank">[Github Repo]</a>
+                    <a href="https://book-exchange-topaz.vercel.app/" target="_blank">[Live Demo]</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="project">
+            <div class="projimg" style="width: 210px;">
+                <img src="img/pomodoro_logo.png" alt="pomodoro-logo"
+                     onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+                <span class="projimg-placeholder">pomodoro-penguin</span>
+            </div>
+            <div class="projtext">
+                <div class="projhd">pomodoro-penguin</div>
+                <div class="projsub">Published Python Package</div>
+                <div class="projdate"></div>
+                <div class="projdesc">
+                    A terminal-based Pomodoro timer published to PyPI. Users can configure work duration,
+                    break duration, and number of cycles via CLI flags, and the package persists timer
+                    history so past sessions can be recalled and reused. Built with a TUI progress bar
+                    and full test coverage via <code>pytest</code>.
+                    <a href="https://github.com/swe-students-spring2026/3-package-emperor_penguins" target="_blank">[Github Repo]</a>
+                    <a href="https://pypi.org/project/pomodoro-penguin/1.0.2/" target="_blank">[PyPI]</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="project">
+            <div class="projimg" style="width: 210px;">
+                <img src="img/presentation_analyzer_logo.png" alt="presentation-analyzer-logo"
+                     onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+                <span class="projimg-placeholder">Presentation Analyzer</span>
+            </div>
+            <div class="projtext">
+                <div class="projhd">Presentation Analyzer</div>
+                <div class="projsub">Containerized Speech Analysis App</div>
+                <div class="projdate"></div>
+                <div class="projdesc">
+                    A two-container Dockerized app that analyzes spoken presentations. A Flask web app
+                    handles audio recording and display, while a separate machine learning client
+                    transcribes audio using OpenAI Whisper, then evaluates the transcript for filler
+                    word frequency, sentence and clause length, overused phrases, and grammar errors.
+                    Results are persisted in MongoDB.
+                    <a href="https://github.com/swe-students-spring2026/4-containers-zesty_monkeys" target="_blank">[Github Repo]</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="project">
+            <div class="projimg" style="width: 210px;">
+                <img src="img/tetruzzle_logo.png" alt="tetruzzle-logo"
+                     onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+                <span class="projimg-placeholder">Tetruzzle</span>
+            </div>
+            <div class="projtext">
+                <div class="projhd">Tetruzzle</div>
+                <div class="projsub">Tetris Board Reader &amp; Puzzle App</div>
+                <div class="projdate"></div>
+                <div class="projdesc">
+                    A Dockerized app that uses computer vision to read real Tetris board states from
+                    screenshots. The machine learning client uses OpenCV and NumPy to detect board
+                    boundaries via Hough line detection and classify each of the 10&times;20 cells by
+                    mino color. The Flask web app lets users import, edit, and save board states,
+                    paired with an embedded Tetris game for puzzle practice.
+                    Deployed on DigitalOcean — if you don't see it, it means I took it down since it costs me $5/wk.
+                    <a href="https://github.com/swe-students-spring2026/5-final-sneaky_golem" target="_blank">[Github Repo]</a>
+                    <a href="https://golem-ml-client-xo5il.ondigitalocean.app/" target="_blank">[Live Demo]</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="project">
+            <div class="projimg" style="width: 210px;">
+                <img src="img/weather_ml_logo.png" alt="weather-ml-logo"
+                     onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+                <span class="projimg-placeholder">Weather ML</span>
+            </div>
+            <div class="projtext">
+                <div class="projhd">Weather ML</div>
+                <div class="projsub">Natural-Language Climate Recommender</div>
+                <div class="projdate"></div>
+                <div class="projdesc">
+                    A collaborative project — a natural-language city climate recommender. Describe a
+                    vibe (<i>"Seattle but sunnier"</i>) and get a ranked list of real cities that match,
+                    each with a factual breakdown of why. Built with a FastAPI backend, Next.js frontend,
+                    OpenAI GPT-4o-mini for query parsing, and <code>scikit-learn</code> PCA for an
+                    interactive 3D city explorer across 230 cities.
+                    <a href="https://github.com/yardenmorad/weather-ml-v2" target="_blank">[Github Repo]</a>
+                    <a href="https://yardenmorad2003.github.io/weather-ml-v2" target="_blank">[Live Demo]</a>
+                </div>
+            </div>
+        </div>
     </div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="site.js"></script>
 </body>
 
 </html>

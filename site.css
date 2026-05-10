@@ -97,6 +97,38 @@ html {
     margin: 10px;
 }
 
+.contact-copy {
+    cursor: pointer;
+    position: relative;
+}
+
+.contact-label {
+    color: #fff;
+    text-transform: uppercase;
+    margin: 10px;
+    transition: opacity 0.2s ease;
+}
+
+.contact-tooltip {
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.75);
+    color: #fff;
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+
+.contact-copy:hover .contact-tooltip {
+    opacity: 1;
+}
+
 .content {
     text-align: center;
 }
@@ -124,10 +156,7 @@ img {
     max-height: 100%;
 }
 
-.project img {
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
+.project img:not(.logo-img) {
     max-width: 200px;
     display: block;
 }
@@ -144,10 +173,54 @@ img {
 
 .autograder-logo {
     max-width: none !important;
-    /* Override default max-width */
     width: 250px;
-    /* Make it larger */
     height: auto;
+    margin-left: 50px;
+}
+
+.projimg-placeholder {
+    display: none;
+    text-align: center;
+    font-style: italic;
+    color: #aaa;
+    font-size: 13px;
+    padding: 10px;
+    word-break: break-word;
+}
+
+.logo-link {
+    position: relative;
+    display: block;
+    width: 160px;
+    height: 160px;
+}
+
+.logo-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 110px;
+    width: auto;
+    display: block;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: center;
+}
+
+.logo-link:hover .logo-img:not(.hover-v) {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(360deg) scale(0.5);
+}
+
+.logo-img.hover-v {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(-20deg) scale(0.8);
+    z-index: 1;
+}
+
+.logo-link:hover .logo-img.hover-v {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(20deg) scale(1.2);
 }
 
 .projtext {
