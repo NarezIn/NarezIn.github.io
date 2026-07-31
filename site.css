@@ -101,19 +101,21 @@ html {
     margin: 10px;
 }
 
-.contact-copy {
+/* A .link that acts as a button instead of an anchor: swaps its label on
+   click and reveals a tooltip on hover. Used by contact and Potpourri. */
+.link-btn {
     cursor: pointer;
     position: relative;
 }
 
-.contact-label {
+.link-label {
     color: #fff;
     text-transform: uppercase;
     margin: 10px;
     transition: opacity 0.2s ease;
 }
 
-.contact-tooltip {
+.link-tooltip {
     position: absolute;
     bottom: calc(100% + 8px);
     left: 50%;
@@ -129,7 +131,7 @@ html {
     transition: opacity 0.2s ease;
 }
 
-.contact-copy:hover .contact-tooltip {
+.link-btn:hover .link-tooltip {
     opacity: 1;
 }
 
@@ -280,6 +282,21 @@ img {
 }
 
 @media only screen and (max-width: 863px) {
+
+    /* Tighten the header buttons so five of them fit on fewer lines. */
+    .content div {
+        margin: 5px;
+    }
+
+    .link {
+        padding: 6px;
+    }
+
+    .link a,
+    .link-label {
+        margin: 5px;
+    }
+
     .projimg {
         float: none;
         margin-left: auto;

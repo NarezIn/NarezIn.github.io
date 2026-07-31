@@ -1,14 +1,53 @@
+// Pending revert timers, keyed by button id, so repeat clicks reset the clock
+// instead of stacking up.
+var flashTimers = {};
+
+/**
+ * Temporarily replace a .link-btn's label and tooltip text, then restore the
+ * text it started out with.
+ *
+ * @param {string} btnId - The id of the .link-btn element.
+ * @param {string} labelText - Text to show on the button while flashing.
+ * @param {string} tooltipText - Text to show in the tooltip while flashing.
+ * @param {number} duration - How long to keep the new text, in milliseconds.
+ * @returns {void}
+ */
+function flashLabel(btnId, labelText, tooltipText, duration) {
+    var btn = document.getElementById(btnId);
+    var label = btn.querySelector('.link-label');
+    var tooltip = btn.querySelector('.link-tooltip');
+
+    // Record the resting text on the first flash only, so clicking again
+    // mid-flash can't save the flashed text as the thing to restore.
+    if (btn.dataset.restingLabel === undefined) {
+        btn.dataset.restingLabel = label.textContent;
+        btn.dataset.restingTooltip = tooltip.textContent;
+    }
+    clearTimeout(flashTimers[btnId]);
+
+    label.textContent = labelText;
+    tooltip.textContent = tooltipText;
+    flashTimers[btnId] = setTimeout(function () {
+        label.textContent = btn.dataset.restingLabel;
+        tooltip.textContent = btn.dataset.restingTooltip;
+    }, duration);
+}
+
+// Contact: copy my email to the clipboard and confirm it worked.
 document.getElementById('contact-btn').addEventListener('click', function () {
-    var label = document.querySelector('#contact-btn .contact-label');
-    var tooltip = document.querySelector('#contact-btn .contact-tooltip');
     navigator.clipboard.writeText('zn2133@nyu.edu').then(function () {
-        label.textContent = 'copied!';
-        tooltip.textContent = 'zn2133@nyu.edu copied to clipboard!';
-        setTimeout(function () {
-            label.textContent = 'contact';
-            tooltip.textContent = 'click to copy my email';
-        }, 2000);
+        flashLabel('contact-btn', 'copied!', 'zn2133@nyu.edu copied to clipboard!', 2000);
     });
+});
+
+// Potpourri: the blog isn't built yet, so let visitors down gently.
+document.getElementById('potpourri-btn').addEventListener('click', function () {
+    flashLabel(
+        'potpourri-btn',
+        'coming soon!',
+        "this isn't ready yet.",
+        2500
+    );
 });
 
 $( document ).ready(function() {
