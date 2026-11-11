@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- Personal site for Zeran (Simon) Ni: header links, About Me, Experience, and Projects. -->
 <html>
 <title>NarezIn</title>
 <link rel="icon" type="image/png" href="img/anime_head_plain.png">
@@ -8,7 +9,7 @@
 <link href="https://fonts.googleapis.com/css?family=Montserrat:300|Source+Sans+Pro|Cantata+One" rel="stylesheet">
 
 
-<link rel="stylesheet" type="text/css" href="site.css?v=3">
+<link rel="stylesheet" type="text/css" href="site.css?v=4">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -27,7 +28,8 @@
                     <span class="link-label">contact</span>
                     <span class="link-tooltip">click to copy my email</span>
                 </div>
-                <div class="link"><a href="pdf/Resume_26Summer_ZeranNi.pdf" target="_blank">Resume</a></div>
+                <div class="link"><a href="pdf/Resume_ZeranNi.pdf" target="_blank">Resume</a></div>
+                <!-- Change this to `CV` Later. -->
                 <div class="link link-btn" id="potpourri-btn">
                     <span class="link-label">Potpourri</span>
                     <span class="link-tooltip">coming soon</span>
@@ -55,15 +57,16 @@
                     </ruby>. I'm an undergraduate student studying Computer Science and Data Science at the <a
                         href="https://cds.nyu.edu/" target="_blank">Center for Data Science</a> at New York University,
                     also working as a research intern at <a href="https://wp.nyu.edu/riskeconlab/">RiskEcon Lab</a> at
-                    <a href="https://cims.nyu.edu/" target="_blank">Courant Institute of Mathematical Sciences</a> at
-                    NYU.
+                    <a href="https://cims.nyu.edu/" target="_blank">Courant Institute of Mathematical Sciences</a>.
                 </p>
                 <p>
-                    I'm also exploring full stack development through my personal project(?) (I don't have anything
-                    fancy). Aside from all that, I enjoy rock climbing, contributing to my great wall project (hyperlink
-                    this), cooking, watching (and sucking at playing) soccer.
+                    I'm also exploring backend software engineering and Computer Vison (add a link to the climbing project here later). 
+                    Aside from all that, I enjoy rock climbing, contributing to my great wall project (hyperlink
+                    this and redirect to potpourri later), cooking, watching <a href="https://www.fcbarcelona.com/en/">Barcelona</a> Football (Soccer...) Club.
                 </p>
-                (Actually hyperlink everything I can so above).
+                <p>
+                    I like building side-projects that solves annoying and reptitive tasks of mine. The UI of those projects can ususally reflect my personality or my mood back then.
+                </p>
             </div>
         </div>
     </div>
@@ -86,11 +89,9 @@
                 <div class="projsub">RiskEcon Lab, Courant Institute of Mathematical Sciences, NYU</div>
                 <div class="projdate">Dec 2025 – Present · New York, NY</div>
                 <div class="projdesc">
-                    <ul style="margin-top: 0; padding-left: 20px;">
-                        <li>Performed exploratory data analysis on ERCOT electricity load, pricing, and weather data to investigate risks to grid stability from extreme weather events.</li>
-                        <li>Built county-to-weather-zone mappings across 254 Texas counties, merging disparate public datasets and resolving data quality issues.</li>
-                        <li>Analyzed relationships between hourly load and heating/cooling degree days (HDD/CDD) using 3D histograms, load duration curves, and seasonal heatmaps.</li>
-                        <li>Conducted hypothesis testing to validate observed patterns in load and price behavior under temperature extremes.</li>
+                    <ul>
+                        <li>Built a Pandas pipeline joining 70K+ hourly load records across 8 ERCOT weather zones with county weather data, reconciling identifiers across four datasets and normalizing timestamps across DST transitions.</li>
+                        <li>Implemented second-order response surface models of daily load on heating/cooling degree days (HDD/CDD) per zone with NumPy least squares, fitting in natural rather than coded units to avoid collinearity and reaching a preliminary adjusted R<sup>2</sup> above 0.92 in 7 of 8 zones.</li>
                         <li>Occasionally laugh at Principal Investigator's funny/unfunny jokes during biweekly meetings.</li>
                     </ul>
                 </div>
@@ -107,7 +108,7 @@
                 <div class="projsub">Center for Talented Youth, John Hopkins University</div>
                 <div class="projdate">June 2026 – July 2026 · Carlisle, PA</div>
                 <div class="projdesc">
-                    <ul style="margin-top: 0; padding-left: 20px;">
+                    <ul>
                         <li>Ran a 2-hour evening session every day, lectured on loops, searching and sorting algorithms, and Object-Oriented Programming (OOP).</li>
                         <li>Fielded students' questions (usually "why doesn't this work?") and walked them through debugging with print statements and the VScode debugger.</li>
                         <li>Kept notes on students' breakthroughs/creative sparks in their daily coding exercises and big projects.</li>
@@ -127,10 +128,10 @@
                 <div class="projsub">Department of Computer Science, New York University</div>
                 <div class="projdate">Jan 2024 – Dec 2025 · New York, NY</div>
                 <div class="projdesc">
-                    <ul style="margin-top: 0; padding-left: 20px;">
+                    <ul>
                         <li>Led 3 hours of in-class tutoring and 7 hours of office hours each week, supporting 200+ students with Python programming (control flow, OOP, File I/O, and data structures) and assignment debugging.</li>
                         <li>Graded 11 programming assignments for ~180 students, delivering detailed and constructive feedback.</li>
-                        <!-- <li>Built an <a href="#autograder">AI-powered autograder</a> that reduced grading time by over 60%.</li> -->
+                        <!-- <li>Built an <a href="#autograder">LLM-assisted autograder</a> that cut grading time by over 50%.</li> -->
                     </ul>
                 </div>
             </div>
@@ -150,22 +151,53 @@
                 <img src="img/autograder_logo.png" alt="autograder-logo" class="autograder-logo">
             </div>
             <div class="projtext">
-                <div class="projhd">
-                    AI-Powered Autograder for <i>Introduction to Computer Programming</i>
-                </div>
-                <div class="projsub">
-                </div>
-                <div class="projdate">
+                <div class="projhd">LLM-Assisted Autograder</div>
+                <div class="projsub">Grading Tool for NYU's <i>Introduction to Computer Programming</i></div>
+                <div class="projdate"></div>
+                <div class="projlinks">
+                    <a href="https://github.com/NarezIn/Autograder_Intro_to_CP" target="_blank">[Github Repo]</a>
                 </div>
                 <div class="projdesc">
-                    Developed an AI-powered autograder using LangChain and OpenAI GPT models to evaluate 11 programming
-                    assignments for over 180 students. The system engineered a dynamic testing pipeline using
-                    <code>subprocess</code> and <code>re</code> to assess code quality and formatting, successfully
-                    overcoming Gradescope’s function-call dependencies to evaluate early-semester assignments.
-                    <a href="https://github.com/NarezIn/Autograder_Intro_to_CP" target="_blank">[Github Repo]</a>
+                    <ul>
+                        <li>Built an LLM-assisted grading tool used on 11 assignments for 100+ students, cutting grading time by over 50% by pairing automated tests with GPT evaluation (LangChain) of code quality and style.</li>
+                        <li>Engineered an evaluation pipeline that runs submissions, validates output with regex and table parsers, and flags edge cases for human review, keeping a grader in the loop for uncertain results.</li>
+                        <li>Scoped the tool around the instructor's needs: modular per-assignment graders that test whole scripts, so work could be graded before students learned functions, which Gradescope's function-call tests could not support.</li>
+                    </ul>
                 </div>
             </div>
         </div> -->
+
+        <!-- Screenshot2Meet (repo: when2meet-autofill). Logo copied from the extension's icon128.svg. -->
+        <div class="project">
+            <div class="projimg" style="width: 210px;">
+                <img src="img/screenshot2meet_logo.svg" alt="screenshot2meet-logo" style="width: 160px;"
+                     onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+                <span class="projimg-placeholder">Screenshot2Meet</span>
+            </div>
+            <div class="projtext">
+                <div class="projhd">Screenshot2Meet</div>
+                <div class="projsub">When2meet Autofill Chrome Extension</div>
+                <div class="projdate"></div>
+                <div class="projlinks">
+                    <a href="https://github.com/NarezIn/when2meet-autofill" target="_blank">[Github Repo]</a>
+                    <a href="https://chromewebstore.google.com/detail/oohjehondjbhbdahlokilecknbdanoif?utm_source=item-share-cb" target="_blank">[Chrome Web Store]</a>
+                </div>
+                <div class="projdesc">
+                    <ul>
+                        <li>Fills in your When2meet availability from calendar screenshots: drop iOS Calendar or Google Calendar screenshots into a side panel, click once, and it marks you free everywhere you have no events (with an undo button).
+                            <span class="note">
+                                <button type="button" class="note-trigger" aria-expanded="false" aria-describedby="s2m-motivation">[motivation...]</button>
+                                <span class="note-pop" id="s2m-motivation" role="tooltip">... of this project was that the research lab that I work for likes to use When2meet to get everyone's availability. The experience of constantly going back and forth from the calender app on my phone to the when2meet screen on my laptop to fill in the slots is not very pleasant.<br> And because I have an iPhone (apple calender) and a Windows laptop, I wasn't able to use other autofill tools that other people built which can connect an calender app to a when2meet window.</span>
+                            </span>
+                        </li>
+                        <li>Built a TypeScript Chrome extension and a Python FastAPI REST service that read the screenshots with OpenCV and PaddleOCR and fill availability directly into When2meet, a third-party site with no public API, handling multilingual weekday labels and timezone-aware slot planning.</li>
+                        <!-- <li>Troubleshot production reliability after deploying the service in Docker on Fly.io, tracing crashes to out-of-memory kills and slow requests to CPU throttling, and fixed both by tuning memory, CPU, and OCR threads.</li> -->
+                        <!-- <li>Developed with Claude Code under an approve-before-implement workflow, reviewing each AI-proposed change, and backed the API with 114 Pytest tests, per-IP rate limiting, and request validation.</li> -->
+                        <!-- <li>The service sleeps when idle, so your first fill may take a minute while it wakes up.</li> -->
+                    </ul>
+                </div>
+            </div>
+        </div>
 
         <div class="project">
             <div class="projimg" style="width: 210px;">
@@ -178,23 +210,25 @@
                 <div class="projhd">Book Exchange</div>
                 <div class="projsub">Student Book Marketplace</div>
                 <div class="projdate"></div>
-                <div class="projdesc">
-                    A full-stack web marketplace for students to buy, loan, or donate second-hand textbooks.
-                    Built with Flask, MongoDB, and Flask-Login, the platform supports user authentication,
-                    post creation and editing, and browsable community listings. Images are hosted via
-                    Cloudinary and the app is deployed on Vercel. Implemented lazy account deletion —
-                    when a user deletes their account, references in other users' records are only cleaned
-                    up when those records are next accessed, avoiding expensive cascading deletes at
-                    deletion time.
+                <div class="projlinks">
                     <a href="https://github.com/NarezIn/Book-Exchange" target="_blank">[Github Repo]</a>
                     <a href="https://book-exchange-topaz.vercel.app/" target="_blank">[Live Demo]</a>
+                </div>
+                <div class="projdesc">
+                    <ul>
+                        <li>As primary developer on a 3-person team, designed the Flask and MongoDB backend and built the HTML/CSS and JavaScript front end of a full-stack marketplace for students to sell, loan, or donate textbooks, deployed on Vercel.</li>
+                        <li>Implemented authentication and authorization with Flask-Login sessions and Werkzeug password hashing, restricting edits and deletions of posts and their Cloudinary-hosted images to each post's owner.</li>
+                        <li>Designed lazy deletion: deleting a post is a single O(1) delete instead of an O(n) sweep across all users' liked posts, and stale references are pruned the next time each user opens their account page.</li>
+                    </ul>
                 </div>
             </div>
         </div>
 
         <div class="project">
             <div class="projimg" style="width: 210px;">
-                <img src="img/pymodoro_icon/not_uploaded_yet.png" alt="pomodoro-logo"
+                <!-- The PNG is a wide canvas with the drawing in the middle; cover-crop to a square to trim the empty sides. -->
+                <img src="img/pymodoro_icon/pymodoro_full.png" alt="pomodoro-logo"
+                     style="width: 170px; height: 170px; object-fit: cover;"
                      onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
                 <span class="projimg-placeholder">Pymodoro</span>
             </div>
@@ -202,13 +236,17 @@
                 <div class="projhd">Pymodoro</div>
                 <div class="projsub">Published Python Package</div>
                 <div class="projdate"></div>
-                <div class="projdesc">
-                    A terminal-based Pomodoro timer published to PyPI. Users can configure work duration,
-                    break duration, and number of cycles via CLI flags, and the package persists timer
-                    history so past sessions can be recalled and reused. Built with a TUI progress bar
-                    and full test coverage via <code>pytest</code>.
+                <div class="projlinks">
                     <a href="https://github.com/NarezIn/pymodoro" target="_blank">[Github Repo]</a>
                     <a href="https://pypi.org/project/pyodoro/" target="_blank">[PyPI]</a>
+                </div>
+                <div class="projdesc">
+                    <ul>
+                        <li>A terminal-based Pomodoro timer published to PyPI.</li>
+                        <li>Work duration, break duration, and number of cycles are set with CLI flags.</li>
+                        <li>Saves timer history, so past sessions can be recalled and reused.</li>
+                        <li>Shows a TUI progress bar, with full test coverage via <code>pytest</code>.</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -223,13 +261,16 @@
                 <div class="projhd">Presentation Analyzer</div>
                 <div class="projsub">Containerized Speech Analysis App</div>
                 <div class="projdate"></div>
-                <div class="projdesc">
-                    A two-container Dockerized app that analyzes spoken presentations. A Flask web app
-                    handles audio recording and display, while a separate machine learning client
-                    transcribes audio using OpenAI Whisper, then evaluates the transcript for filler
-                    word frequency, sentence and clause length, overused phrases, and grammar errors.
-                    Results are persisted in MongoDB.
+                <div class="projlinks">
                     <a href="https://github.com/NarezIn/speech_analyzer" target="_blank">[Github Repo]</a>
+                </div>
+                <div class="projdesc">
+                    <ul>
+                        <li>A two-container Dockerized app that analyzes spoken presentations.</li>
+                        <li>A Flask web app handles audio recording and display, while a separate machine learning client transcribes the audio with OpenAI Whisper.</li>
+                        <li>Evaluates the transcript for filler word frequency, sentence and clause length, overused phrases, and grammar errors.</li>
+                        <li>Results are persisted in MongoDB.</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -244,15 +285,17 @@
                 <div class="projhd">Tetruzzle</div>
                 <div class="projsub">Tetris Board Reader &amp; Puzzle App</div>
                 <div class="projdate"></div>
-                <div class="projdesc">
-                    A Dockerized app that uses computer vision to read real Tetris board states from
-                    screenshots. The machine learning client uses OpenCV and NumPy to detect board
-                    boundaries via Hough line detection and classify each of the 10&times;20 cells by
-                    mino color. The Flask web app lets users import, edit, and save board states,
-                    paired with an embedded Tetris game for puzzle practice.
-                    Deployed on DigitalOcean — if you don't see it, it means I took it down since it costs me $5/wk.
+                <div class="projlinks">
                     <a href="https://github.com/NarezIn/Tetruzzle" target="_blank">[Github Repo]</a>
                     <a href="https://golem-ml-client-xo5il.ondigitalocean.app/" target="_blank">[Live Demo]</a>
+                </div>
+                <div class="projdesc">
+                    <ul>
+                        <li>A Dockerized app that uses computer vision to read real Tetris board states from screenshots.</li>
+                        <li>The machine learning client uses OpenCV and NumPy to detect board boundaries via Hough line detection and classify each of the 10&times;20 cells by mino color.</li>
+                        <li>The Flask web app lets users import, edit, and save board states, paired with an embedded Tetris game for puzzle practice.</li>
+                        <li>Deployed on DigitalOcean — if you don't see it, it means I took it down since it costs me $5/wk.</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -267,21 +310,24 @@
                 <div class="projhd">Weather ML</div>
                 <div class="projsub">Natural-Language Climate Recommender</div>
                 <div class="projdate"></div>
-                <div class="projdesc">
-                    A collaborative project — a natural-language city climate recommender. Describe a
-                    vibe (<i>"Seattle but sunnier"</i>) and get a ranked list of real cities that match,
-                    each with a factual breakdown of why. Built with a FastAPI backend, Next.js frontend,
-                    OpenAI GPT-4o-mini for query parsing, and <code>scikit-learn</code> PCA for an
-                    interactive 3D city explorer across 230 cities.
+                <div class="projlinks">
                     <a href="https://github.com/YardenMorad2003/weather-ml-v2" target="_blank">[Github Repo]</a>
                     <a href="https://yardenmorad2003.github.io/weather-ml-v2" target="_blank">[Live Demo]</a>
+                </div>
+                <div class="projdesc">
+                    <ul>
+                        <li>A collaborative project — a natural-language city climate recommender.</li>
+                        <li>Describe a vibe (<i>"Seattle but sunnier"</i>) and get a ranked list of real cities that match, each with a factual breakdown of why.</li>
+                        <li>Built with a FastAPI backend, a Next.js frontend, and OpenAI GPT-4o-mini for query parsing.</li>
+                        <li><code>scikit-learn</code> PCA powers an interactive 3D city explorer across 230 cities.</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
 
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script src="site.js?v=2"></script>
+<script src="site.js?v=3"></script>
 </body>
 
 </html>

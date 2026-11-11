@@ -258,6 +258,100 @@ img {
     color: #555;
 }
 
+/* Bullet lists in Experience and Projects cards; links sit on their own line below. */
+.projdesc ul {
+    margin-top: 0;
+    padding-left: 20px;
+}
+
+/* Project links (GitHub, demo, store) between the subtitle and the bullet points. */
+.projlinks {
+    margin-top: 4px;
+}
+
+.projlinks a {
+    color: #555;
+}
+
+/* Inline note, e.g. "[motivation]" in a bullet: a small link-styled button that shows a
+   tiny pop-up box on hover or keyboard focus, and stays open after a click or tap (touch
+   screens have no hover). site.js keeps the box on screen and handles closing it. */
+.note {
+    position: relative;
+    display: inline-block;
+}
+
+.note-trigger {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    font-size: 0.85em;
+    color: #555;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Hidden boxes use display: none, not just opacity, because an invisible box near the
+   screen edge would still widen the page on phones. */
+.note-pop {
+    display: none;
+    position: absolute;
+    bottom: calc(100% + 6px);
+    left: 0; /* site.js centres it over the link and keeps it on screen */
+    width: max-content;
+    max-width: min(280px, calc(100vw - 16px));
+    background: rgba(0, 0, 0, 0.88);
+    color: #fff;
+    font-size: 12px;
+    font-style: normal;
+    line-height: 1.4;
+    text-align: left;
+    padding: 6px 10px;
+    border-radius: 4px;
+    pointer-events: none;
+    z-index: 10;
+}
+
+@keyframes note-fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Used when there is no room above the link. */
+.note-pop.below {
+    bottom: auto;
+    top: calc(100% + 6px);
+}
+
+.note.open .note-pop,
+.note-trigger:focus-visible + .note-pop {
+    display: block;
+    animation: note-fade-in 0.2s ease;
+}
+
+/* Only real pointers get hover; on phones a tap would leave a sticky hover behind. */
+@media (hover: hover) {
+    .note:hover .note-pop {
+        display: block;
+        animation: note-fade-in 0.2s ease;
+    }
+}
+
+/* Escape hides the box without moving focus; cleared when focus or the pointer leaves. */
+.note.hush .note-pop {
+    display: none;
+}
+
+/* Keep superscripts (e.g. R²) from pushing their line away from the one above. */
+.projdesc sup {
+    line-height: 0;
+}
+
 
 
 @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
@@ -320,6 +414,10 @@ img {
     }
 
     .projdate {
+        text-align: center;
+    }
+
+    .projlinks {
         text-align: center;
     }
 }
